@@ -80,6 +80,14 @@ public class readFile extends PanelDibujo{
                     int xf = Integer.parseInt(p1[0]);
                     int yf = Integer.parseInt(p1[1]);
                     int zf = Integer.parseInt(p1[2]);
+                    if(zi == -300){
+                        if(xi > 0){xi -=15;}else{xi +=15;}
+                        if(yi > 0){yi -=15;}else{yi +=15;}
+                    }
+                    if(zf == -300){
+                        if(xf > 0){xf -=15;}else{xf +=15;}
+                        if(yf > 0){yf -=15;}else{yf +=15;}
+                    }
                     CoordenadasCasa[fila][0] = xi;
                     CoordenadasCasa[fila][1] = yi;
                     CoordenadasCasa[fila][2] = zi;

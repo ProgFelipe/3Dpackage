@@ -43,37 +43,30 @@ public class PanelDibujo extends JPanel implements KeyListener{
     @Override
      public void paintComponent( Graphics g){
             transformaciones = new Transformaciones(this);
-      
+            
             super.paintComponent(g);
             g2d = (Graphics2D) g;
             g2d.setColor(Color.CYAN);
             g2d.translate(getWidth()/2, getHeight()/2);
-            /*g2d.drawOval((this.getWidth()/2)-10, (this.getHeight()/2)-10, 20, 20);
-            g2d.drawLine(0, this.getHeight()/2, this.getWidth(), this.getHeight()/2);
-            g2d.drawLine(this.getWidth()/2, 0, this.getWidth()/2, this.getHeight());*/
             g2d.drawLine(-this.getWidth()/2, 0, this.getWidth()/2, 0);
             g2d.drawLine(0, this.getHeight()/2, 0, -this.getHeight()/2);
-            
             g2d.setColor(Color.green);
             g2d.setStroke(new BasicStroke(4));
-
-            
             
             dibujarCasa(g2d);      
     }
     
     public void dibujarCasa(Graphics g){
         try {
-        if(CoordenadasCasa != null){
-            for(int f = 0; f < CoordenadasCasa.length-1; f+=2){    
-             g.drawLine(CoordenadasCasa[f][0], CoordenadasCasa[f][1],
-                     CoordenadasCasa[f+1][0], CoordenadasCasa[f+1][1]);
-            }   }
-        } catch (Exception e) {            
-        }
+            if(CoordenadasCasa != null){
+                for(int f = 0; f < CoordenadasCasa.length-1; f+=2){    
+                 g.drawLine(CoordenadasCasa[f][0], CoordenadasCasa[f][1],
+                         CoordenadasCasa[f+1][0], CoordenadasCasa[f+1][1]);
+                }   
+            }
+        } catch (Exception e) {}
     }
       
-    
 
     public void resetHouse(){
       r = new readFile();
@@ -82,6 +75,7 @@ public class PanelDibujo extends JPanel implements KeyListener{
       r.setLines();
       this.CoordenadasCasa = r.getCoordenadas();
     }
+    
     @Override
     public void keyPressed(KeyEvent e) {
         //Uso del teclado para la traslacion

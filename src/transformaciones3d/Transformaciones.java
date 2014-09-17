@@ -25,12 +25,19 @@ public class Transformaciones{
     public void Traslacion(int tx, int  ty, int tz){  
         if(tx != 0){
                 for(int f = 0; f < pD.CoordenadasCasa.length; f++){
-                    pD.CoordenadasCasa[f][0] += tx;
+                    if(pD.CoordenadasCasa[f][2] == -300){
+                        pD.CoordenadasCasa[f][0] += tx/2;
+                    }else{
+                    pD.CoordenadasCasa[f][0] += tx;}
                     }}
         if(ty != 0 ){
                 for(int f = 0; f < pD.CoordenadasCasa.length; f++){
-                    pD.CoordenadasCasa[f][1] += ty;
-                    }}
+                    if(pD.CoordenadasCasa[f][2] == -300){
+                        pD.CoordenadasCasa[f][1] += ty/2;
+                    }else{
+                    pD.CoordenadasCasa[f][1] += ty;}
+                    }
+        }
         if(tz != 0){
                 for(int f = 0; f < pD.CoordenadasCasa.length; f++){
                     pD.CoordenadasCasa[f][2] += tz;
