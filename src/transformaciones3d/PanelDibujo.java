@@ -47,12 +47,12 @@ public class PanelDibujo extends JPanel implements KeyListener{
             super.paintComponent(g);
             g2d = (Graphics2D) g;
             g2d.setColor(Color.CYAN);
+            g2d.translate(getWidth()/2, getHeight()/2);
             /*g2d.drawOval((this.getWidth()/2)-10, (this.getHeight()/2)-10, 20, 20);
             g2d.drawLine(0, this.getHeight()/2, this.getWidth(), this.getHeight()/2);
             g2d.drawLine(this.getWidth()/2, 0, this.getWidth()/2, this.getHeight());*/
-            g2d.drawOval(-4, -4, 20, 20);
-            g2d.drawLine(0, 2, this.getWidth(), 2);
-            g2d.drawLine(2, 0, 2, this.getHeight());
+            g2d.drawLine(-this.getWidth()/2, 0, this.getWidth()/2, 0);
+            g2d.drawLine(0, this.getHeight()/2, 0, -this.getHeight()/2);
             
             g2d.setColor(Color.green);
             g2d.setStroke(new BasicStroke(4));
