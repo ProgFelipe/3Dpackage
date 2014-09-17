@@ -64,7 +64,7 @@ public class readFile extends PanelDibujo{
       System.err.println("Error: " + e);
     }
   }
-      public void setLines(int w, int h){
+      public void setLines(){
           //w, h es el punto de origen
        CoordenadasCasa = new int [aristas*2][3];
          int fila = 0;
@@ -80,11 +80,11 @@ public class readFile extends PanelDibujo{
                     int xf = Integer.parseInt(p1[0]);
                     int yf = Integer.parseInt(p1[1]);
                     int zf = Integer.parseInt(p1[2]);
-                    CoordenadasCasa[fila][0] = xi+(w/2);
-                    CoordenadasCasa[fila][1] = yi+(h/2);
+                    CoordenadasCasa[fila][0] = xi;
+                    CoordenadasCasa[fila][1] = yi;
                     CoordenadasCasa[fila][2] = zi;
-                    CoordenadasCasa[fila+1][0] = xf+(w/2);
-                    CoordenadasCasa[fila+1][1] = yf+(h/2);
+                    CoordenadasCasa[fila+1][0] = xf;
+                    CoordenadasCasa[fila+1][1] = yf;
                     CoordenadasCasa[fila+1][2] = zf;
                     fila +=2;
                     //System.out.println("Linea de ("+xi+", "+yi+") a ("+xf+", "+yf+") ");
