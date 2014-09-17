@@ -37,7 +37,7 @@ public class PanelDibujo extends JPanel implements KeyListener{
             r = new readFile();
             r.read();
             //r.setLines(1270,581);
-            r.setLines(0,0);
+            r.setLines();
             this.CoordenadasCasa = r.getCoordenadas();
     }
     @Override
@@ -79,7 +79,7 @@ public class PanelDibujo extends JPanel implements KeyListener{
       r = new readFile();
       r.read();
       //r.setLines(this.getWidth(),this.getHeight());
-      r.setLines(0,0);
+      r.setLines();
       this.CoordenadasCasa = r.getCoordenadas();
     }
     @Override
